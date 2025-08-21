@@ -1,1 +1,1 @@
-export function initUI(opts) { console.log('UI ready', opts); }
+export function initUI({onLoadGLBClick,onTalkClick,onCalmClick,onGardenClick,onHomeworkClick}){document.getElementById('btnLoadGLB').addEventListener('click',onLoadGLBClick);document.getElementById('btnTalk').addEventListener('click',onTalkClick);document.getElementById('btnCalm').addEventListener('click',onCalmClick);document.getElementById('btnGarden').addEventListener('click',onGardenClick);document.getElementById('btnHomework').addEventListener('click',onHomeworkClick);}

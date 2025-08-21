@@ -1,0 +1,4 @@
+
+const KEY = 'pebble_proxy_url';
+export function getProxyURL() { return localStorage.getItem(KEY); }
+export function setProxyURL(v) { if (v) localStorage.setItem(KEY, v); }

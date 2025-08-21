@@ -1,0 +1,15 @@
+
+// Offline TTS fallback using Web Speech API
+export async function ttsSpeak(text) {
+  if ('speechSynthesis' in window) {
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 1.0; u.pitch = 1.2; u.volume = 1.0;
+    return new Promise((resolve) => {
+      u.onend = resolve;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(u);
+    });
+  } else {
+    console.log('Speech Synthesis not available.');
+  }
+}
